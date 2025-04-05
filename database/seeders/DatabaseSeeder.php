@@ -20,4 +20,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
     }
+
+    public function run()
+    {
+    // Call the UniverseSeeder
+    $this->call(UniverseSeeder::class);
+
+    // You can add other seeders here if needed
+    }
+
 }
