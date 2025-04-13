@@ -15,6 +15,9 @@ Route::post('/superhero', [SuperheroController::class, 'store'])->name('superher
 Route::get('/superhero/{superhero}/edit', [SuperheroController::class, 'edit'])->name('superhero.edit');
 Route::put('/superhero/{superhero}/update', [SuperheroController::class, 'update'])->name('superhero.update');
 Route::delete('/superhero/{superhero}/destroy', [SuperheroController::class, 'destroy'])->name('superhero.destroy');
+Route::get('/superheros/{id}', [SuperheroController::class, 'show'])->name('superheros.show');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

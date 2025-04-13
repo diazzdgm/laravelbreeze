@@ -65,4 +65,16 @@ class SuperheroController extends Controller
     return redirect()->route('superhero.index')->with('success', 'Superhero deleted successfully');
 }
 
+
+public function show($id)
+{
+    $superhero = Superhero::find($id);
+
+    if (!$superhero) {
+        return redirect()->route('superheros.index')->with('error', 'Superhéroe no encontrado');
+    }
+
+    return view('superheros.show', compact('superhero'));
+}
+
 }
