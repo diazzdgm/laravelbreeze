@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuperheroController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FileController;
+
 
 
 Route::get('/', function () {
@@ -16,6 +18,11 @@ Route::get('/superhero/{superhero}/edit', [SuperheroController::class, 'edit'])-
 Route::put('/superhero/{superhero}/update', [SuperheroController::class, 'update'])->name('superhero.update');
 Route::delete('/superhero/{superhero}/destroy', [SuperheroController::class, 'destroy'])->name('superhero.destroy');
 Route::get('/superheros/{id}', [SuperheroController::class, 'show'])->name('superheros.show');
+
+Route::get('/form', [FileController::class, 'showFiles'])->name('files');
+
+Route::post('/upload', [FileController::class, 'upload'])->name('upload');
+Route::post('/download', [FileController::class, 'download'])->name('download');
 
 
 
